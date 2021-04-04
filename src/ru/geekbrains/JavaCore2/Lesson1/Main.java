@@ -11,6 +11,11 @@ import java.util.Random;
 
 public class Main {
     static Random random = new Random();
+    static String[] nameCat = {"Барсик", "Мурзик", "Рыжик" };
+    static String [] nameHuman = {"Василий", "Валерия", "Петр", "Мария" };
+    private static String[] nameRobot = {"T1000", "T800", "СВЧ"};
+
+
     public static void main(String [] args){
         Object[] party = createParty(4);
         Obstacle[] obstacles = createObstacles(5);
@@ -38,9 +43,9 @@ public class Main {
 
     private static Object randomPersonage(){
         switch (random.nextInt(3)){
-            case 0: return new Cat("", random.nextInt(2)+2, random.nextInt(10)+20);
-            case 1: return new Human("", random.nextInt(3)+1, random.nextInt(20)+30);
-            case 2: return new Robot("", random.nextInt(10), random.nextInt(100));
+            case 0: return new Cat(nameRandom(nameCat), random.nextInt(2)+2, random.nextInt(10)+20);
+            case 1: return new Human(nameRandom(nameHuman), random.nextInt(3)+1, random.nextInt(20)+30);
+            case 2: return new Robot(nameRandom(nameRobot), random.nextInt(10), random.nextInt(100));
             default: return null;
         }
     }
@@ -61,4 +66,7 @@ public class Main {
         }
     }
 
+    private static String nameRandom(String [] names){
+        return names[random.nextInt(names.length)];
+    }
 }
