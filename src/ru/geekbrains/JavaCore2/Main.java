@@ -1,4 +1,4 @@
-package ru.geekbrains.Lesson;
+package ru.geekbrains.JavaCore2;
 
 public class Main {
 
