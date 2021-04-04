@@ -11,10 +11,10 @@ public class Wall implements Obstacle {
     }
 
     @Override
-    public boolean overcome(Object personage){
+    public boolean overcome(Object personage) {
         if (personage instanceof Jumpable) {
             return ((Jumpable) personage).jump(height);
-        }else {
+        } else {
             System.out.println("Не способен прыгать");
             return false;
         }
