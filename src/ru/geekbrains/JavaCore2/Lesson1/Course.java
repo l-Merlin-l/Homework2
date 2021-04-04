@@ -8,8 +8,11 @@ import java.util.Random;
 
 public class Course {
 
-    private static Random random = new Random();
+    private Random random = new Random();
     private Obstacle[] obstacles;
+
+    private final int MAX_HEIGHT_WALL = 4;
+    private final int MAX_DISTANCE = 70;
 
     public Course(int quantity) {
         this.obstacles = createObstacles(quantity);
@@ -31,7 +34,7 @@ public class Course {
         team.finished();
     }
 
-    private static Obstacle[] createObstacles(int quantity) {
+    private Obstacle[] createObstacles(int quantity) {
         Obstacle[] obstacles = new Obstacle[quantity];
         for (int i = 0; i < obstacles.length; i++) {
             obstacles[i] = randomObstacle();
@@ -39,12 +42,12 @@ public class Course {
         return obstacles;
     }
 
-    private static Obstacle randomObstacle() {
+    private Obstacle randomObstacle() {
         switch (random.nextInt(2)) {
             case 0:
-                return new Treadmill(random.nextInt(30));
+                return new Treadmill(random.nextInt(MAX_DISTANCE));
             case 1:
-                return new Wall(random.nextInt(3));
+                return new Wall(random.nextInt(MAX_HEIGHT_WALL));
             default:
                 return null;
         }
