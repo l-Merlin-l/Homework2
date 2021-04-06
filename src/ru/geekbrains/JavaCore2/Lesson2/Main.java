@@ -13,14 +13,14 @@ public class Main {
             e.printStackTrace();
         }
 
-        //Массив с тектсом
+        //Массив с текстом
         try {
             arrayFour(new String[][]{{"1", "2", "3", "4"}, {"5", "6f", "7", "8"}, {"9", "10", "11", "12d"}, {"13", "14", "15", "16"}});
         } catch (MyArraySizeException | MyArrayDataException e) {
             e.printStackTrace();
         }
 
-        //Массив не соответвтсвующий размерам
+        //Массив не соответствующий размерам
         try {
             arrayFour(new String[][]{{"1", "2", "3", "4"}, {"5", "6", "7", "8"}, {"9", "10", "11"}, {"13", "14", "15", "16"}});
         } catch (MyArraySizeException | MyArrayDataException e) {
